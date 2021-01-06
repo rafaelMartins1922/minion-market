@@ -50,7 +50,7 @@ function App() {
                 Home
               </Navbar.Brand>
             </LinkContainer>
-            <Navbar.Toggle />
+           
             <Navbar.Collapse className = "justify-content-end">
               <Nav activeKey = {window.location.pathname}>
                 {
@@ -61,10 +61,10 @@ function App() {
                   ): (
                     <>
                       <LinkContainer to = "/signup">
-                      <Nav.Link href="/singup" >signup</Nav.Link>
+                      <Nav.Link href="/signup" >Sign up</Nav.Link>
                       </LinkContainer>
                       <LinkContainer to = "/login">
-                      <Nav.Link href="/login" >login</Nav.Link>
+                      <Nav.Link href="/login" >Login</Nav.Link>
                       </LinkContainer>
                     </>
                   )
@@ -78,7 +78,6 @@ function App() {
         </div>
       </>
     ))
-    
   );
 }
 

@@ -1,0 +1,58 @@
+/*Formatação do tutorial da Amazon*/
+body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 16px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+  background-color:rgba(237,222,15,0.73);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+select.form-control,
+textarea.form-control,
+input.form-control {
+  font-size: 1rem;
+}
+input[type=file] {
+  width: 100%;
+}
+/*---------------------------formatação personalizada-----------------------*/
+/*Estes estilos substituem os padrões do Bootstrap para a nav e os containers*/
+nav {
+  all:unset;
+  margin:auto;
+  width: 90vw;
+  height:5vh;
+  padding:1.5vh 3vw 1.5vh 3vw;
+  background-color: #232419 !important;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+nav * {
+  font-weight: bold;
+}
+nav a{
+  text-decoration: none;
+  padding-left: 3vw;
+  color: white;
+  transition-duration: 0.5s;
+}
+
+nav a:hover {
+  color: #faf6be;
+}
+
+nav .show {
+  text-decoration: none;
+  padding-right: 3vw;
+}
