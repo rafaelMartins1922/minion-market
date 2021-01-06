@@ -1,6 +1,70 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import ListGroup from "react-bootstrap/ListGroup";
+import { useAppContext } from "../libs/contextLib";
+import { onError } from "../libs/errorLib";
 import "./Home.css";
+import { API } from "aws-amplify";
+import { LinkContainer } from "react-router-bootstrap";
+
 export default function Home() {
+  const [minions, setMinions] = useState([]);
+  const { isAuthenticated } = useAppContext();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function onLoad() {
+      if (!isAuthenticated) {
+        return;
+      }
+  
+      try {
+        const minions = await loadMinions();
+        setMinions(minions);
+      } catch (e) {
+        onError(e);
+      }
+  
+      setIsLoading(false);
+    }
+  
+    onLoad();
+  }, [isAuthenticated]);
+  
+  function loadMinions() {
+    return API.get("minions-market", "/minions");
+  }
+  
+
+  function renderNotesList(notes) {
+    return null;
+  }
+
+  function renderLander() {
+    return (
+      <div> Nenhum produto encontrado.</div>
+    );
+  }
+
+  function renderProducts() {
+    return (
+      <div id="products">
+              
+      {minions.map(({ minionId, productName, unitPrice }) => (
+        <div class="card">
+        <img src="minion-face.png" alt="Avatar"/>
+        <div class="card-container">
+          <h4><b>{productName}</b></h4>
+          <p>R$ {unitPrice}</p>
+          <LinkContainer key={minionId} to={`/minions/${minionId}`}>
+            <button type="button" name="reserve"><p>Reservar</p></button>
+          </LinkContainer> 
+        </div>
+      </div>
+      ))}
+        </div>
+    );
+  }
+
   return (
     <div className="Home">
       <section id="start-section">
@@ -27,33 +91,11 @@ export default function Home() {
               </div>
               <img src="three_minions_looking_up.png" alt="minions looking up"/>
             </div>
-            <div id="products">
-              <div class="card">
-                <img src="minion-face.png" alt="Avatar"/>
-                <div class="card-container">
-                  <h4><b>Produto</b></h4>
-                  <p>R$ 500,00</p>
-                  <button type="button" name="reserve"><p>Reservar</p></button>
-                </div>
-              </div>
-              <div class="card">
-                <img src="minion-face.png" alt="Avatar"/>
-                <div class="card-container">
-                  <h4><b>Produto</b></h4>
-                  <p>R$ 500,00</p>
-                  <button type="button" name="reserve"><p>Reservar</p></button>
-                </div>
-              </div>
-              <div class="card">
-                <img src="minion-face.png" alt="Avatar"/>
-                <div class="card-container">
-                  <h4><b>Produto</b></h4>
-                  <p>R$ 500,00</p>
-                  <button type="button" name="reserve"><p>Reservar</p></button>
-                </div>
-              </div>
-            </div>
+            {isAuthenticated ? renderProducts() : renderLander()}
           </section>
     </div>
   );
 }
+
+
+  //{isAuthenticated ? renderProducts() : renderLander()}
