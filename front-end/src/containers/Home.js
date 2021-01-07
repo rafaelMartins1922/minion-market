@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ListGroup from "react-bootstrap/ListGroup";
 import { useAppContext } from "../libs/contextLib";
 import { onError } from "../libs/errorLib";
 import "./Home.css";
@@ -32,11 +31,6 @@ export default function Home() {
   
   function loadMinions() {
     return API.get("minions-market", "/minions");
-  }
-  
-
-  function renderNotesList(notes) {
-    return null;
   }
 
   function renderLander() {

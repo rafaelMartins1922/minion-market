@@ -4,10 +4,14 @@ import Home from "./containers/Home";
 import NotFound from './containers/NotFound';
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
+import ProductDetails from "./containers/ProductDetails";
 
 export default function Routes() {
   return (
     <Switch>
+        <Route exact path="/minions/:id">
+          <ProductDetails/>
+        </Route>
         <Route exact path="/">
         <Home />
         </Route>
@@ -17,6 +21,7 @@ export default function Routes() {
         <Route exact path="/signup">
             <Signup />
         </Route>
+        
         <Route>
             <NotFound />
         </Route>

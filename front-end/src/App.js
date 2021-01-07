@@ -8,6 +8,7 @@ import { AppContext } from "./libs/contextLib";
 import {Auth} from "aws-amplify";
 import {useHistory} from "react-router-dom";
 import { onError } from "./libs/errorLib";
+import './index.css';
 
 function App() {
   const [isAuthenticated, userHasAuthenticated] = useState(false);
