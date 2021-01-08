@@ -35,7 +35,7 @@ export default function Home() {
 
   function renderLander() {
     return (
-      <div> Nenhum produto encontrado.</div>
+      <div class="login-msg"> Faça login para exibir os produtos disponíveis.</div>
     );
   }
 
@@ -43,17 +43,17 @@ export default function Home() {
     return (
       <div id="products">
               
-      {minions.map(({ minionId, productName, unitPrice }) => (
+      {minions.map(({ minionId, productName, unitPrice, photos }) => (
         <div class="card">
-        <img src="minion-face.png" alt="Avatar"/>
-        <div class="card-container">
-          <h4><b>{productName}</b></h4>
-          <p>R$ {unitPrice}</p>
-          <LinkContainer key={minionId} to={`/minions/${minionId}`}>
-            <button type="button" name="reserve"><p>Reservar</p></button>
-          </LinkContainer> 
+          <img class="product_img" src={photos} alt={photos}/>
+          <div class="card-container">
+            <h4><b>{productName}</b></h4>
+            <p>R$ {unitPrice}</p>
+            <LinkContainer key={minionId} to={`/minions/${minionId}`}>
+              <button type="button" name="reserve"><p>Reservar</p></button>
+            </LinkContainer> 
+          </div>
         </div>
-      </div>
       ))}
         </div>
     );

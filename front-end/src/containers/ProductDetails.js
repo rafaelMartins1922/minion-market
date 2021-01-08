@@ -5,7 +5,7 @@ import { onError } from "../libs/errorLib";
 import Form from "react-bootstrap/Form";
 import LoaderButton from "../components/LoaderButton";
 import './ProductDetails.css'
-
+import 'path';
 export default function ProductDetails() {
   const file = useRef(null);
   const { id } = useParams();
@@ -22,7 +22,7 @@ export default function ProductDetails() {
     async function onLoad() {
       try {
         const product = await loadProduct();
-        const { minionId, productName, unitPrice, amount } = product;
+
 
         setProduct(product);
       } catch (e) {
@@ -33,17 +33,15 @@ export default function ProductDetails() {
     onLoad();
   }, [id]);
 
-  async function handleSubmit(event) {
-  
-    event.preventDefault();
-    setIsLoading(true);
+  function deleteProduct() {
+    return API.del("minions-market", `/minions/${id}`);
   }
-  
-  async function handleDelete(event) {
+
+  async function handleSubmit(event) {
     event.preventDefault();
   
     const confirmed = window.confirm(
-      "Are you sure you want to delete this note?"
+      "Tem certeza que deseja fazer esta reserva?"
     );
   
     if (!confirmed) {
@@ -51,15 +49,24 @@ export default function ProductDetails() {
     }
   
     setIsDeleting(true);
+
+    try{
+      await deleteProduct();
+      alert("Produto reservado!");
+      history.push("/");
+    }catch(e){
+      onError(e);
+      setIsDeleting(false);
+    }
   }
 
   return (
     <div className="ProductDetails">
       {product && (
-        <section class="content">
+        <section class="content"> 
           <div class = "prod-details-start">
             <div class="card">
-              <img src="minion-face.png" alt="Avatar"/>
+              <img src= {`../${product.photos}`}  alt={product.photos}/>
               <div class="card-container">
                 <h4><b>{product.productName}</b></h4>
                 <p>R$ {product.unitPrice}</p>         
@@ -71,9 +78,9 @@ export default function ProductDetails() {
             <Form.Group controlId="content">
             <Form.Control
               as="textarea"
-              value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus lobortis condimentum. Aliquam nonummy auctor massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla at risus. Quisque purus magna, auctor et, sagittis ac, posuere eu, lectus. Nam mattis, felis ut adipiscing."
+              value={product.description}
             />
-            </Form.Group>
+          </Form.Group>
           </div>  
           <div class = "div-form">
             <Form onSubmit={handleSubmit}>

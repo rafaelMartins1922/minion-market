@@ -48,12 +48,13 @@
   
   button {
     height: 5vh;
-    width: 10vw;
+    width: 8vw;
     background: rgba(237, 222, 15, 0.73);
     border-radius: 30px;
     font-weight: bold;
     color:#5A5A5A;  
     transition: 0.3s;
+    margin:auto;
   }
   
   button:hover {
