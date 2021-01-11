@@ -33,6 +33,10 @@ provider:
         - dynamodb:DeleteItem
         - dynamodb:DescribeTable
       Resource: "arn:aws:dynamodb:us-east-1:*:*"
+    - Effect: Allow
+      Action:
+        - ses:SendEmail
+      Resource: "arn:aws:ses:*" 
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
@@ -70,6 +74,15 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+
+  listReserved:
+    handler: listReserved.main
+    events:
+      - http:
+          path: minions/listReserved
+          method: get
+          cors: true
+          authorizer: aws_iam
   
   update:
     # Defines an HTTP API endpoint that calls the main function in update.js
@@ -82,7 +95,16 @@ functions:
           method: put
           cors: true
           authorizer: aws_iam
-  
+
+  reserve:
+    handler: reserve.main
+    events:
+      - http:
+          path: minions/reserve/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+    
   delete:
     # Defines an HTTP API endpoint that calls the main function in delete.js
     # - path: url path is /notes/{id}
