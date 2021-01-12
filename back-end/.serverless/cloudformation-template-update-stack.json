@@ -223,7 +223,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/create.zip"
+          "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/create.zip"
         },
         "Handler": "create.main",
         "Runtime": "nodejs12.x",
@@ -265,7 +265,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/get.zip"
+          "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/get.zip"
         },
         "Handler": "get.main",
         "Runtime": "nodejs12.x",
@@ -307,7 +307,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/list.zip"
+          "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/list.zip"
         },
         "Handler": "list.main",
         "Runtime": "nodejs12.x",
@@ -349,7 +349,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/listReserved.zip"
+          "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/listReserved.zip"
         },
         "Handler": "listReserved.main",
         "Runtime": "nodejs12.x",
@@ -391,7 +391,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/update.zip"
+          "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/update.zip"
         },
         "Handler": "update.main",
         "Runtime": "nodejs12.x",
@@ -433,7 +433,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/reserve.zip"
+          "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/reserve.zip"
         },
         "Handler": "reserve.main",
         "Runtime": "nodejs12.x",
@@ -458,14 +458,14 @@
         "ReserveLogGroup"
       ]
     },
-    "ReserveLambdaVersionffJthLf0qQRn4cLFjmyppEn25EXkg2oamfaDvXw": {
+    "ReserveLambdaVersioncyFWYf0Hc4hQwgxdDFagaGgHrUpEL05gml4OeoXdo": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ReserveLambdaFunction"
         },
-        "CodeSha256": "Jw4NcUbm5mdd3fz8qU3rmIZ9ybe2P2I6pg4d+LIfeag="
+        "CodeSha256": "U/prRLPi1Ys1Oqo1F8ZYQg5nfLqk78lzZwbjUYoyNGc="
       }
     },
     "DeleteLambdaFunction": {
@@ -475,7 +475,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/delete.zip"
+          "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/delete.zip"
         },
         "Handler": "delete.main",
         "Runtime": "nodejs12.x",
@@ -517,7 +517,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/billing.zip"
+          "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/billing.zip"
         },
         "Handler": "billing.main",
         "Runtime": "nodejs12.x",
@@ -1211,7 +1211,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1610416782653": {
+    "ApiGatewayDeployment1610472262009": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -1597,7 +1597,7 @@
     "ReserveLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ReserveLambdaVersionffJthLf0qQRn4cLFjmyppEn25EXkg2oamfaDvXw"
+        "Ref": "ReserveLambdaVersioncyFWYf0Hc4hQwgxdDFagaGgHrUpEL05gml4OeoXdo"
       }
     },
     "DeleteLambdaFunctionQualifiedArn": {

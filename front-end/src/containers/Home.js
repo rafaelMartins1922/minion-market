@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     async function onLoad() {
-  
+
       try {
         const minions = await loadMinions();
         setMinions(minions);
@@ -24,7 +24,7 @@ export default function Home() {
     }
   
     onLoad();
-  }, []);
+  }, [isAuthenticated]);
   
   function loadMinions() {
     return API.get("minions-market", "/minions");

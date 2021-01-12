@@ -2,7 +2,6 @@ import AWS from 'aws-sdk';
 
 const htmlTemplate = (data) => {
     return `
-      <p><strong>Name:</strong> ${data.body}</p>
       <p><strong>Message:</strong> O produto ${data.productName} foi reservado com o e-mail ${data.email}, número de cartão ${data.cardNumber}, pertencete a ${data.cardholder}!</p>
     `;
   };

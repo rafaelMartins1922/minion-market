@@ -7,6 +7,7 @@ import LoaderButton from "../components/LoaderButton";
 import './ProductDetails.css'
 import 'path';
 import {useFormFields} from '../libs/hooksLib';
+import {Auth} from 'aws-amplify';
 
 export default function ProductDetails() {
   const file = useRef(null);
@@ -31,9 +32,11 @@ export default function ProductDetails() {
 
     async function onLoad() {
       try {
+        const user = await Auth.currentAuthenticatedUser();
         const product = await loadProduct();
         setProduct(product);
         fields.productName = product.productName;
+        fields.email = user.attributes.email;
       } catch (e) {
         onError(e);
       }
@@ -96,7 +99,7 @@ export default function ProductDetails() {
           </div>  
           <div class = "div-form">
             <Form onSubmit={handleSubmit}>
-              <Form.Group size="lg" controlId="email">
+              {/* <Form.Group size="lg" controlId="email">
                 <Form.Control
                   autoFocus
                   type="email"
@@ -104,7 +107,7 @@ export default function ProductDetails() {
                   onChange={handleFieldChange}
                   placeholder = "e-mail"
                 />
-              </Form.Group>
+              </Form.Group> */}
               {/* <Form.Group size="lg" controlId="amount">
                 <Form.Control
                   type="email"
