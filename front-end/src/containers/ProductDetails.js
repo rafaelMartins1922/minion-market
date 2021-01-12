@@ -6,6 +6,8 @@ import Form from "react-bootstrap/Form";
 import LoaderButton from "../components/LoaderButton";
 import './ProductDetails.css'
 import 'path';
+import {useFormFields} from '../libs/hooksLib';
+
 export default function ProductDetails() {
   const file = useRef(null);
   const { id } = useParams();
@@ -13,7 +15,15 @@ export default function ProductDetails() {
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-
+  const [fields, handleFieldChange] = useFormFields({
+    email:"",
+    amount:0,
+    cardholder:"",
+    cardNumber: "",
+    reserved: 1,
+    productName: null
+  });
+  
   useEffect(() => {
     function loadProduct() {
       return API.get("minions-market", `/minions/${id}`);
@@ -22,9 +32,8 @@ export default function ProductDetails() {
     async function onLoad() {
       try {
         const product = await loadProduct();
-
-
         setProduct(product);
+        fields.productName = product.productName;
       } catch (e) {
         onError(e);
       }
@@ -33,8 +42,10 @@ export default function ProductDetails() {
     onLoad();
   }, [id]);
 
-  function deleteProduct() {
-    return API.del("minions-market", `/minions/${id}`);
+  function updateProduct() {
+    return API.put("minions-market", `/minions/reserve/${id}`,{
+      body: fields
+    });
   }
 
   async function handleSubmit(event) {
@@ -51,7 +62,8 @@ export default function ProductDetails() {
     setIsDeleting(true);
 
     try{
-      await deleteProduct();
+      const executed = await updateProduct();
+      console.log(executed);
       alert("Produto reservado!");
       history.push("/");
     }catch(e){
@@ -88,21 +100,32 @@ export default function ProductDetails() {
                 <Form.Control
                   autoFocus
                   type="email"
+                  value={fields.email}
+                  onChange={handleFieldChange}
                   placeholder = "e-mail"
                 />
               </Form.Group>
-              <Form.Group size="lg" controlId="amount">
+              {/* <Form.Group size="lg" controlId="amount">
                 <Form.Control
+                  type="email"
+                  value={fields.email}
+                  onChange={handleFieldChange}
                   placeholder="Quantidade desejada"
                 />
-              </Form.Group>
-              <Form.Group size="lg" controlId="carholder">
+              </Form.Group> */}
+              <Form.Group size="lg" controlId="cardholder">
                 <Form.Control
+                  type="text"
+                  value={fields.cardholder}
+                  onChange={handleFieldChange}
                   placeholder="Nome no Cartão"
                 />
               </Form.Group>
-              <Form.Group size="lg" controlId="card-number">
+              <Form.Group size="lg" controlId="cardNumber">
                 <Form.Control
+                  type="text"
+                  value={fields.cardnumber}
+                  onChange={handleFieldChange}
                   placeholder="Número no Cartão"
                 />
               </Form.Group>

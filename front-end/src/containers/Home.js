@@ -12,9 +12,6 @@ export default function Home() {
 
   useEffect(() => {
     async function onLoad() {
-      if (!isAuthenticated) {
-        return;
-      }
   
       try {
         const minions = await loadMinions();
@@ -27,7 +24,7 @@ export default function Home() {
     }
   
     onLoad();
-  }, [isAuthenticated]);
+  }, []);
   
   function loadMinions() {
     return API.get("minions-market", "/minions");
@@ -43,15 +40,23 @@ export default function Home() {
     return (
       <div id="products">
               
-      {minions.map(({ minionId, productName, unitPrice, photos }) => (
+      {minions.map(({ minionId, productName, unitPrice, photos, reserved}) => (
         <div class="card">
           <img class="product_img" src={photos} alt={photos}/>
           <div class="card-container">
             <h4><b>{productName}</b></h4>
             <p>R$ {unitPrice}</p>
-            <LinkContainer key={minionId} to={`/minions/${minionId}`}>
-              <button type="button" name="reserve"><p>Reservar</p></button>
-            </LinkContainer> 
+            {
+              reserved?
+              (
+                  <button type="button" name="reserve" className = "btn-reserve reserved"><p>Reservado</p></button>
+              ):(
+                <LinkContainer key={minionId} to={`/minions/${minionId}`}>
+                <button type="button" name="reserve" className = "btn-reserve"><p>Reservar</p></button>
+                </LinkContainer> 
+              )
+            }
+            
           </div>
         </div>
       ))}
@@ -85,7 +90,7 @@ export default function Home() {
               </div>
               <img src="three_minions_looking_up.png" alt="minions looking up"/>
             </div>
-            {isAuthenticated ? renderProducts() : renderLander()}
+            {renderProducts()}
           </section>
     </div>
   );

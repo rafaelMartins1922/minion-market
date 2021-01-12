@@ -5,22 +5,24 @@ import NotFound from './containers/NotFound';
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import ProductDetails from "./containers/ProductDetails";
+import AuthenticatedRoute from "./components/AuthenticatedRoute";
+import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 
 export default function Routes() {
   return (
     <Switch>
-        <Route exact path="/minions/:id">
+        <AuthenticatedRoute exact path="/minions/:id">
           <ProductDetails/>
-        </Route>
+        </AuthenticatedRoute>
         <Route exact path="/">
         <Home />
         </Route>
-        <Route exact path="/login">
+        <UnauthenticatedRoute exact path="/login">
             <Login />
-        </Route>
-        <Route exact path="/signup">
+        </UnauthenticatedRoute>
+        <UnauthenticatedRoute exact path="/signup">
             <Signup />
-        </Route>
+        </UnauthenticatedRoute>
         <Route>
             <NotFound />
         </Route>
