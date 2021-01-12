@@ -73,7 +73,6 @@ functions:
           path: minions
           method: get
           cors: true
-          authorizer: aws_iam
 
   listReserved:
     handler: listReserved.main

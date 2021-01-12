@@ -249,7 +249,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z/create.zip"
+                "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/create.zip"
               },
               "Handler": "create.main",
               "Runtime": "nodejs12.x",
@@ -291,7 +291,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z/get.zip"
+                "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/get.zip"
               },
               "Handler": "get.main",
               "Runtime": "nodejs12.x",
@@ -333,7 +333,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z/list.zip"
+                "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/list.zip"
               },
               "Handler": "list.main",
               "Runtime": "nodejs12.x",
@@ -375,7 +375,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z/listReserved.zip"
+                "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/listReserved.zip"
               },
               "Handler": "listReserved.main",
               "Runtime": "nodejs12.x",
@@ -417,7 +417,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z/update.zip"
+                "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/update.zip"
               },
               "Handler": "update.main",
               "Runtime": "nodejs12.x",
@@ -459,7 +459,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z/reserve.zip"
+                "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/reserve.zip"
               },
               "Handler": "reserve.main",
               "Runtime": "nodejs12.x",
@@ -484,14 +484,14 @@
               "ReserveLogGroup"
             ]
           },
-          "ReserveLambdaVersionp5MNuxgO6ZiAC16T30gJrBxqnMsWc6I3DADupAbsH1o": {
+          "ReserveLambdaVersionffJthLf0qQRn4cLFjmyppEn25EXkg2oamfaDvXw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ReserveLambdaFunction"
               },
-              "CodeSha256": "xJLos4MBzMD9x3fOXtbTLZm9cqWYJHsxVJVvgDL9Ksc="
+              "CodeSha256": "Jw4NcUbm5mdd3fz8qU3rmIZ9ybe2P2I6pg4d+LIfeag="
             }
           },
           "DeleteLambdaFunction": {
@@ -501,7 +501,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z/delete.zip"
+                "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/delete.zip"
               },
               "Handler": "delete.main",
               "Runtime": "nodejs12.x",
@@ -526,14 +526,14 @@
               "DeleteLogGroup"
             ]
           },
-          "DeleteLambdaVersionNUvEQuiKX8xzxPCKJGVXO7CvHCrFegzEOjBYIpoLSA": {
+          "DeleteLambdaVersionMUtCNfa7HzVs00Q5XdDhYbthdWMaOijhIpV7jcjuwNE": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteLambdaFunction"
               },
-              "CodeSha256": "iLpBbQdCQEE3gtPcCimxCmzPYhyc4Bpro0jdcbWQtmI="
+              "CodeSha256": "VcNrmGVA8Kd40NQWrqpyat6kFkKbCu0Dlog360751tw="
             }
           },
           "BillingLambdaFunction": {
@@ -543,7 +543,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z/billing.zip"
+                "S3Key": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z/billing.zip"
               },
               "Handler": "billing.main",
               "Runtime": "nodejs12.x",
@@ -991,7 +991,7 @@
                 "Ref": "ApiGatewayRestApi"
               },
               "ApiKeyRequired": false,
-              "AuthorizationType": "AWS_IAM",
+              "AuthorizationType": "NONE",
               "Integration": {
                 "IntegrationHttpMethod": "POST",
                 "Type": "AWS_PROXY",
@@ -1237,7 +1237,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1610333633266": {
+          "ApiGatewayDeployment1610416782653": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1623,13 +1623,13 @@
           "ReserveLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ReserveLambdaVersionp5MNuxgO6ZiAC16T30gJrBxqnMsWc6I3DADupAbsH1o"
+              "Ref": "ReserveLambdaVersionffJthLf0qQRn4cLFjmyppEn25EXkg2oamfaDvXw"
             }
           },
           "DeleteLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteLambdaVersionNUvEQuiKX8xzxPCKJGVXO7CvHCrFegzEOjBYIpoLSA"
+              "Ref": "DeleteLambdaVersionMUtCNfa7HzVs00Q5XdDhYbthdWMaOijhIpV7jcjuwNE"
             }
           },
           "BillingLambdaFunctionQualifiedArn": {
@@ -1884,11 +1884,6 @@
                 ],
                 "allowCredentials": false
               },
-              "authorizer": {
-                "type": "AWS_IAM",
-                "managedExternally": false,
-                "identitySource": "method.request.header.Authorization"
-              },
               "integration": "AWS_PROXY"
             }
           }
@@ -2036,7 +2031,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ReserveLambdaVersionp5MNuxgO6ZiAC16T30gJrBxqnMsWc6I3DADupAbsH1o"
+        "versionLogicalId": "ReserveLambdaVersionffJthLf0qQRn4cLFjmyppEn25EXkg2oamfaDvXw"
       },
       "delete": {
         "handler": "delete.main",
@@ -2081,7 +2076,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "DeleteLambdaVersionNUvEQuiKX8xzxPCKJGVXO7CvHCrFegzEOjBYIpoLSA"
+        "versionLogicalId": "DeleteLambdaVersionMUtCNfa7HzVs00Q5XdDhYbthdWMaOijhIpV7jcjuwNE"
       },
       "billing": {
         "handler": "billing.main",
@@ -2169,7 +2164,7 @@
       },
       "package": {
         "individually": true,
-        "artifactDirectoryName": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z"
+        "artifactDirectoryName": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z"
       },
       "plugins": {
         "$ref": "$[\"service\"][\"plugins\"]"
@@ -2188,7 +2183,7 @@
   },
   "package": {
     "individually": true,
-    "artifactDirectoryName": "serverless/minions-market/prod/1610333652338-2021-01-11T02:54:12.338Z",
+    "artifactDirectoryName": "serverless/minions-market/prod/1610416831241-2021-01-12T02:00:31.241Z",
     "artifact": ""
   }
 }

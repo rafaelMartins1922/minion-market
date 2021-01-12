@@ -2,8 +2,8 @@ import AWS from 'aws-sdk';
 
 const htmlTemplate = (data) => {
     return `
-      <p><strong>Name:</strong> ${data.pathParameters}</p>
-      <p><strong>Message:</strong> Produto reservado!</p>
+      <p><strong>Name:</strong> ${data.body}</p>
+      <p><strong>Message:</strong> O produto ${data.productName} foi reservado com o e-mail ${data.email}, número de cartão ${data.cardNumber}, pertencete a ${data.cardholder}!</p>
     `;
   };
 
@@ -15,7 +15,7 @@ const sendMail = (sender, receivers, data) => {
     Message: {
       Subject: {
         Charset: 'UTF-8',
-        Data: 'Website Enquiry'
+        Data: "Reserva de Produto no Minion's Market"
       },
       Body: {
         Html: {

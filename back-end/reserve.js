@@ -1,8 +1,13 @@
 import handler from "./libs/handler-lib";
 import dynamoDb from "./libs/dynamodb-lib";
+import mailer from './mailer';
 
 export const main = handler(async (event, context) => {
   const data = JSON.parse(event.body);
+  await mailer.sendMail('rlm87978@gmail.com',['rafael.martins@poli.ufrj.br'],data);
+  console.log(event);
+  var accessToken = event['accessToken'];
+  console.log(accessToken);
   const params = {
     TableName: process.env.tableName,
     // 'Key' defines the partition key and sort key of the item to be updated
