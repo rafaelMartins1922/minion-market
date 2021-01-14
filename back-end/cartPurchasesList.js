@@ -3,7 +3,7 @@ import dynamoDb from "./libs/dynamodb-lib";
 
 export const main = handler(async (event, context) => {
   const params = {
-    TableName: 'products'
+    TableName: 'cart-and-purchases'
   };
 
   const result = await dynamoDb.scan(params);

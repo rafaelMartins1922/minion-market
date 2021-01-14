@@ -9,7 +9,7 @@ export const main = handler(async (event, context) => {
     TableName: process.env.tableName,
     // 'Key' defines the partition key and sort key of the item to be updated
     Key: {
-      minionId: event.pathParameters.id
+      productId: event.pathParameters.id
     },
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression

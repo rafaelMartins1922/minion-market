@@ -127,6 +127,51 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+
+  cartPurchasesCreate:
+    handler: cartPurchasesCreate.main
+    events:
+      - http:
+          path: cart-purchases
+          method: post
+          cors: true
+          authorizer: aws_iam
+
+  cartPurchasesGet:
+    handler: cartPurchasesGet.main
+    events:
+      - http:
+          path: cart-purchases/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+
+  cartPurchasesList:
+    handler: cartPurchasesList.main
+    events:
+      - http:
+          path: cart-purchases
+          method: get
+          cors: true
+          authorizer: aws_iam
+
+  cartPurchasesUpdate:
+    handler: cartPurchasesUpdate.main
+    events:
+      - http:
+          path: cart-purchases/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+
+  cartPurchasesDelete:
+    handler: cartPurchasesDelete.main
+    events:
+      - http:
+          path: cart-purchases/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
           
 # Create our resources with separate CloudFormation templates
 resources:
