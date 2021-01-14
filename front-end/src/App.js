@@ -58,6 +58,9 @@ function App() {
                   isAuthenticated ? (
                     <>
                       <Nav.Link onClick = {handleLogout}>Logout</Nav.Link>
+                      <LinkContainer to = "/cart">
+                        <Nav.Link href="/cart" >Carrinho</Nav.Link>
+                      </LinkContainer>
                     </>
                   ): (
                     <>

@@ -71,7 +71,7 @@ export default function Signup() {
     return (
       <Form onSubmit={handleConfirmationSubmit}>
         <Form.Group controlId="confirmationCode" size="lg">
-          <Form.Label>Confirmation Code</Form.Label>
+          <Form.Label>Código de Confirmação</Form.Label>
           <Form.Control
             autoFocus
             type="tel"
@@ -107,7 +107,7 @@ export default function Signup() {
           />
         </Form.Group>
         <Form.Group controlId="password" size="lg">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Senha</Form.Label>
           <Form.Control
             type="password"
             value={fields.password}
@@ -115,7 +115,7 @@ export default function Signup() {
           />
         </Form.Group>
         <Form.Group controlId="confirmPassword" size="lg">
-          <Form.Label>Confirm Password</Form.Label>
+          <Form.Label>Confirme a senha</Form.Label>
           <Form.Control
             type="password"
             onChange={handleFieldChange}

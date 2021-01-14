@@ -159,6 +159,36 @@
               "LogGroupName": "/aws/lambda/minions-market-prod-billing"
             }
           },
+          "CartPurchasesCreateLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/minions-market-prod-cartPurchasesCreate"
+            }
+          },
+          "CartPurchasesGetLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/minions-market-prod-cartPurchasesGet"
+            }
+          },
+          "CartPurchasesListLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/minions-market-prod-cartPurchasesList"
+            }
+          },
+          "CartPurchasesUpdateLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/minions-market-prod-cartPurchasesUpdate"
+            }
+          },
+          "CartPurchasesDeleteLogGroup": {
+            "Type": "AWS::Logs::LogGroup",
+            "Properties": {
+              "LogGroupName": "/aws/lambda/minions-market-prod-cartPurchasesDelete"
+            }
+          },
           "IamRoleLambdaExecution": {
             "Type": "AWS::IAM::Role",
             "Properties": {
@@ -249,7 +279,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/create.zip"
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/create.zip"
               },
               "Handler": "create.main",
               "Runtime": "nodejs12.x",
@@ -274,14 +304,14 @@
               "CreateLogGroup"
             ]
           },
-          "CreateLambdaVersionPmIsIZl5T8chYhY6gE3UEZIdrs6hAxvJOHHKe7o": {
+          "CreateLambdaVersiontUHZsjYM1oljndepgBLKufTUh0MydMtYK97IU5qg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateLambdaFunction"
               },
-              "CodeSha256": "IIj8apidZQvq1CmootGs1GMwyNz7XBglB5bQzUvcgOg="
+              "CodeSha256": "liW+NJov+JTGoQYfs284rDlP79leL1EQq1sHU9lI/xM="
             }
           },
           "GetLambdaFunction": {
@@ -291,7 +321,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/get.zip"
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/get.zip"
               },
               "Handler": "get.main",
               "Runtime": "nodejs12.x",
@@ -316,14 +346,14 @@
               "GetLogGroup"
             ]
           },
-          "GetLambdaVersioneHSYejjejvu1sfWxzqHMxF06J893xd9xKJCQvMBKs": {
+          "GetLambdaVersionKdqolQ086LvBsm79eWGX2OclWwqgeLxCANrqwLeQb9k": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GetLambdaFunction"
               },
-              "CodeSha256": "+oW1gZCjlfOimq3OXFxme1dmRzpO2g2lQxR6jm5TxeI="
+              "CodeSha256": "XftYXhfVqQp7+VcpkIgeLRwm/LdOWYdFxgUncj3IGJc="
             }
           },
           "ListLambdaFunction": {
@@ -333,7 +363,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/list.zip"
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/list.zip"
               },
               "Handler": "list.main",
               "Runtime": "nodejs12.x",
@@ -358,14 +388,14 @@
               "ListLogGroup"
             ]
           },
-          "ListLambdaVersioncvsONkfzWCfGYFJbnrpAMSbh9WFpI0wStxaNPJZbTU": {
+          "ListLambdaVersionpS7hjn0fOHYH3BwLWWjfU6GxGTaXcNVCZkApHeCwk": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListLambdaFunction"
               },
-              "CodeSha256": "suzFxSbRupVsGprCIx5D11dcKdhPnw9T3Gv6Ro001D0="
+              "CodeSha256": "KgYvjGLzpIgeWXYXhJR1PDOGBetrJyHpmlVYchnjyhM="
             }
           },
           "ListReservedLambdaFunction": {
@@ -375,7 +405,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/listReserved.zip"
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/listReserved.zip"
               },
               "Handler": "listReserved.main",
               "Runtime": "nodejs12.x",
@@ -417,7 +447,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/update.zip"
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/update.zip"
               },
               "Handler": "update.main",
               "Runtime": "nodejs12.x",
@@ -442,14 +472,14 @@
               "UpdateLogGroup"
             ]
           },
-          "UpdateLambdaVersionwfAmQ8CvBvp56B0ODXCMBSL7nCHI93oOImrOmHglvQ": {
+          "UpdateLambdaVersion9WPZGtkC1rDGzrCr6hqmrb7s8A8AFqVB5y14SDJAyw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateLambdaFunction"
               },
-              "CodeSha256": "ZSAJys5x/0IbToCYTxCAMcXX+sHc7uITOJr9o+KN1k4="
+              "CodeSha256": "/WAppBaa9MntVbXkjSnGtfI1CZbHEiwabQQbMsQBypA="
             }
           },
           "ReserveLambdaFunction": {
@@ -459,7 +489,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/reserve.zip"
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/reserve.zip"
               },
               "Handler": "reserve.main",
               "Runtime": "nodejs12.x",
@@ -484,14 +514,14 @@
               "ReserveLogGroup"
             ]
           },
-          "ReserveLambdaVersioncyFWYf0Hc4hQwgxdDFagaGgHrUpEL05gml4OeoXdo": {
+          "ReserveLambdaVersionm9cdSv0qwBx4GC6PlZYMUFldIbNKBlCzf9WxLoDGf2I": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ReserveLambdaFunction"
               },
-              "CodeSha256": "U/prRLPi1Ys1Oqo1F8ZYQg5nfLqk78lzZwbjUYoyNGc="
+              "CodeSha256": "cm/MAujMNUXi5qq/c0+AdKc0E0mzVTpQomYTm0+fPq4="
             }
           },
           "DeleteLambdaFunction": {
@@ -501,7 +531,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/delete.zip"
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/delete.zip"
               },
               "Handler": "delete.main",
               "Runtime": "nodejs12.x",
@@ -526,14 +556,14 @@
               "DeleteLogGroup"
             ]
           },
-          "DeleteLambdaVersionMUtCNfa7HzVs00Q5XdDhYbthdWMaOijhIpV7jcjuwNE": {
+          "DeleteLambdaVersiond0Dg9eoGVFhaSJemz526cnvxHxEXeGsT08NEA8": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "DeleteLambdaFunction"
               },
-              "CodeSha256": "VcNrmGVA8Kd40NQWrqpyat6kFkKbCu0Dlog360751tw="
+              "CodeSha256": "NrkFvX7NHXr24ure9CCrDvVavltTKBRzVqfdn5tx+jM="
             }
           },
           "BillingLambdaFunction": {
@@ -543,7 +573,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z/billing.zip"
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/billing.zip"
               },
               "Handler": "billing.main",
               "Runtime": "nodejs12.x",
@@ -576,6 +606,216 @@
                 "Ref": "BillingLambdaFunction"
               },
               "CodeSha256": "UFp5qeDNPjsyMMOy/kicw9EFVf1hqO42+4UuiLqMjbU="
+            }
+          },
+          "CartPurchasesCreateLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/cartPurchasesCreate.zip"
+              },
+              "Handler": "cartPurchasesCreate.main",
+              "Runtime": "nodejs12.x",
+              "FunctionName": "minions-market-prod-cartPurchasesCreate",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "tableName": "minions",
+                  "stripeSecretKey": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO",
+                  "STRIPE_SECRET_KEY": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO"
+                }
+              },
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              }
+            },
+            "DependsOn": [
+              "CartPurchasesCreateLogGroup"
+            ]
+          },
+          "CartPurchasesCreateLambdaVersionIS55GLQccG9w015X7f3VndYUvIWFrNFItZeUReVwWE": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "CartPurchasesCreateLambdaFunction"
+              },
+              "CodeSha256": "QSD0dZd9ysc0QEh43mvtF1yUgJBnjxBciciTd7jF+8k="
+            }
+          },
+          "CartPurchasesGetLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/cartPurchasesGet.zip"
+              },
+              "Handler": "cartPurchasesGet.main",
+              "Runtime": "nodejs12.x",
+              "FunctionName": "minions-market-prod-cartPurchasesGet",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "tableName": "minions",
+                  "stripeSecretKey": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO",
+                  "STRIPE_SECRET_KEY": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO"
+                }
+              },
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              }
+            },
+            "DependsOn": [
+              "CartPurchasesGetLogGroup"
+            ]
+          },
+          "CartPurchasesGetLambdaVersionWrJjVDSUS53PL28pJEK9fAes26cf5bZ0G4XDqoFk": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "CartPurchasesGetLambdaFunction"
+              },
+              "CodeSha256": "/xZWmAWZ54xtkxUmpDANXF/AIEb9vTIO7GGd/epkhTQ="
+            }
+          },
+          "CartPurchasesListLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/cartPurchasesList.zip"
+              },
+              "Handler": "cartPurchasesList.main",
+              "Runtime": "nodejs12.x",
+              "FunctionName": "minions-market-prod-cartPurchasesList",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "tableName": "minions",
+                  "stripeSecretKey": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO",
+                  "STRIPE_SECRET_KEY": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO"
+                }
+              },
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              }
+            },
+            "DependsOn": [
+              "CartPurchasesListLogGroup"
+            ]
+          },
+          "CartPurchasesListLambdaVersion3X3oAWUZRjVSsAeulDPQy03XHD1dLKm0cBW5TpXto": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "CartPurchasesListLambdaFunction"
+              },
+              "CodeSha256": "7LuK+Mr/HNjjXehK10ocapRSqL+m0137FzmTJRX+5MA="
+            }
+          },
+          "CartPurchasesUpdateLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/cartPurchasesUpdate.zip"
+              },
+              "Handler": "cartPurchasesUpdate.main",
+              "Runtime": "nodejs12.x",
+              "FunctionName": "minions-market-prod-cartPurchasesUpdate",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "tableName": "minions",
+                  "stripeSecretKey": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO",
+                  "STRIPE_SECRET_KEY": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO"
+                }
+              },
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              }
+            },
+            "DependsOn": [
+              "CartPurchasesUpdateLogGroup"
+            ]
+          },
+          "CartPurchasesUpdateLambdaVersionP2OnXUqMcbgIFlQcQZycksd0j5g9i3xQZoSb7TV2ls": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "CartPurchasesUpdateLambdaFunction"
+              },
+              "CodeSha256": "KhfT3coIgYmaRjjJ7S6jm2kUJkiFTf3ynF5u8UNN/TA="
+            }
+          },
+          "CartPurchasesDeleteLambdaFunction": {
+            "Type": "AWS::Lambda::Function",
+            "Properties": {
+              "Code": {
+                "S3Bucket": {
+                  "Ref": "ServerlessDeploymentBucket"
+                },
+                "S3Key": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z/cartPurchasesDelete.zip"
+              },
+              "Handler": "cartPurchasesDelete.main",
+              "Runtime": "nodejs12.x",
+              "FunctionName": "minions-market-prod-cartPurchasesDelete",
+              "MemorySize": 1024,
+              "Timeout": 6,
+              "Environment": {
+                "Variables": {
+                  "tableName": "minions",
+                  "stripeSecretKey": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO",
+                  "STRIPE_SECRET_KEY": "sk_test_51I4WLxD1dNNSRbMLVMIVdS5XeotnJyNsPqYnqyZxoBg7m12iuIUfTSBoAfSJLUVZxR8bEfnCT28E7XkuZccZamzq00VRkupxBO"
+                }
+              },
+              "Role": {
+                "Fn::GetAtt": [
+                  "IamRoleLambdaExecution",
+                  "Arn"
+                ]
+              }
+            },
+            "DependsOn": [
+              "CartPurchasesDeleteLogGroup"
+            ]
+          },
+          "CartPurchasesDeleteLambdaVersionOs2oDfX22fp46rypvvqEpaqygcweBpoHCnjvhVnU": {
+            "Type": "AWS::Lambda::Version",
+            "DeletionPolicy": "Retain",
+            "Properties": {
+              "FunctionName": {
+                "Ref": "CartPurchasesDeleteLambdaFunction"
+              },
+              "CodeSha256": "KFwsmHxTXwwt2o/0rcFvXxEf13PWhIoMEy7g0JdoSlI="
             }
           },
           "ApiGatewayRestApi": {
@@ -663,6 +903,33 @@
                 ]
               },
               "PathPart": "billing",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceCartDashpurchases": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Fn::GetAtt": [
+                  "ApiGatewayRestApi",
+                  "RootResourceId"
+                ]
+              },
+              "PathPart": "cart-purchases",
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayResourceCartDashpurchasesIdVar": {
+            "Type": "AWS::ApiGateway::Resource",
+            "Properties": {
+              "ParentId": {
+                "Ref": "ApiGatewayResourceCartDashpurchases"
+              },
+              "PathPart": "{id}",
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
               }
@@ -887,6 +1154,96 @@
               },
               "ResourceId": {
                 "Ref": "ApiGatewayResourceBilling"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayMethodCartDashpurchasesOptions": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "HttpMethod": "OPTIONS",
+              "MethodResponses": [
+                {
+                  "StatusCode": "200",
+                  "ResponseParameters": {
+                    "method.response.header.Access-Control-Allow-Origin": true,
+                    "method.response.header.Access-Control-Allow-Headers": true,
+                    "method.response.header.Access-Control-Allow-Methods": true
+                  },
+                  "ResponseModels": {}
+                }
+              ],
+              "RequestParameters": {},
+              "Integration": {
+                "Type": "MOCK",
+                "RequestTemplates": {
+                  "application/json": "{statusCode:200}"
+                },
+                "ContentHandling": "CONVERT_TO_TEXT",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": "200",
+                    "ResponseParameters": {
+                      "method.response.header.Access-Control-Allow-Origin": "'*'",
+                      "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,GET,POST'"
+                    },
+                    "ResponseTemplates": {
+                      "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".+\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+                    }
+                  }
+                ]
+              },
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceCartDashpurchases"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              }
+            }
+          },
+          "ApiGatewayMethodCartDashpurchasesIdVarOptions": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "AuthorizationType": "NONE",
+              "HttpMethod": "OPTIONS",
+              "MethodResponses": [
+                {
+                  "StatusCode": "200",
+                  "ResponseParameters": {
+                    "method.response.header.Access-Control-Allow-Origin": true,
+                    "method.response.header.Access-Control-Allow-Headers": true,
+                    "method.response.header.Access-Control-Allow-Methods": true
+                  },
+                  "ResponseModels": {}
+                }
+              ],
+              "RequestParameters": {},
+              "Integration": {
+                "Type": "MOCK",
+                "RequestTemplates": {
+                  "application/json": "{statusCode:200}"
+                },
+                "ContentHandling": "CONVERT_TO_TEXT",
+                "IntegrationResponses": [
+                  {
+                    "StatusCode": "200",
+                    "ResponseParameters": {
+                      "method.response.header.Access-Control-Allow-Origin": "'*'",
+                      "method.response.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-Amz-User-Agent'",
+                      "method.response.header.Access-Control-Allow-Methods": "'OPTIONS,DELETE,PUT,GET'"
+                    },
+                    "ResponseTemplates": {
+                      "application/json": "#set($origin = $input.params(\"Origin\"))\n#if($origin == \"\") #set($origin = $input.params(\"origin\")) #end\n#if($origin.matches(\".+\")) #set($context.responseOverride.header.Access-Control-Allow-Origin = $origin) #end"
+                    }
+                  }
+                ]
+              },
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceCartDashpurchasesIdVar"
               },
               "RestApiId": {
                 "Ref": "ApiGatewayRestApi"
@@ -1237,7 +1594,222 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1610472262009": {
+          "ApiGatewayMethodCartDashpurchasesPost": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "POST",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceCartDashpurchases"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "CartPurchasesCreateLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodCartDashpurchasesIdVarGet": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "GET",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceCartDashpurchasesIdVar"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "CartPurchasesGetLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodCartDashpurchasesGet": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "GET",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceCartDashpurchases"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "CartPurchasesListLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodCartDashpurchasesIdVarPut": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "PUT",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceCartDashpurchasesIdVar"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "CartPurchasesUpdateLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayMethodCartDashpurchasesIdVarDelete": {
+            "Type": "AWS::ApiGateway::Method",
+            "Properties": {
+              "HttpMethod": "DELETE",
+              "RequestParameters": {},
+              "ResourceId": {
+                "Ref": "ApiGatewayResourceCartDashpurchasesIdVar"
+              },
+              "RestApiId": {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "ApiKeyRequired": false,
+              "AuthorizationType": "AWS_IAM",
+              "Integration": {
+                "IntegrationHttpMethod": "POST",
+                "Type": "AWS_PROXY",
+                "Uri": {
+                  "Fn::Join": [
+                    "",
+                    [
+                      "arn:",
+                      {
+                        "Ref": "AWS::Partition"
+                      },
+                      ":apigateway:",
+                      {
+                        "Ref": "AWS::Region"
+                      },
+                      ":lambda:path/2015-03-31/functions/",
+                      {
+                        "Fn::GetAtt": [
+                          "CartPurchasesDeleteLambdaFunction",
+                          "Arn"
+                        ]
+                      },
+                      "/invocations"
+                    ]
+                  ]
+                }
+              },
+              "MethodResponses": []
+            }
+          },
+          "ApiGatewayDeployment1610654477438": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1251,6 +1823,8 @@
               "ApiGatewayMethodMinionsListreservedOptions",
               "ApiGatewayMethodMinionsReserveIdVarOptions",
               "ApiGatewayMethodBillingOptions",
+              "ApiGatewayMethodCartDashpurchasesOptions",
+              "ApiGatewayMethodCartDashpurchasesIdVarOptions",
               "ApiGatewayMethodMinionsPost",
               "ApiGatewayMethodMinionsIdVarGet",
               "ApiGatewayMethodMinionsGet",
@@ -1258,7 +1832,12 @@
               "ApiGatewayMethodMinionsIdVarPut",
               "ApiGatewayMethodMinionsReserveIdVarPut",
               "ApiGatewayMethodMinionsIdVarDelete",
-              "ApiGatewayMethodBillingPost"
+              "ApiGatewayMethodBillingPost",
+              "ApiGatewayMethodCartDashpurchasesPost",
+              "ApiGatewayMethodCartDashpurchasesIdVarGet",
+              "ApiGatewayMethodCartDashpurchasesGet",
+              "ApiGatewayMethodCartDashpurchasesIdVarPut",
+              "ApiGatewayMethodCartDashpurchasesIdVarDelete"
             ]
           },
           "CreateLambdaPermissionApiGateway": {
@@ -1557,6 +2136,191 @@
               }
             }
           },
+          "CartPurchasesCreateLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "CartPurchasesCreateLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "CartPurchasesGetLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "CartPurchasesGetLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "CartPurchasesListLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "CartPurchasesListLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "CartPurchasesUpdateLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "CartPurchasesUpdateLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
+          "CartPurchasesDeleteLambdaPermissionApiGateway": {
+            "Type": "AWS::Lambda::Permission",
+            "Properties": {
+              "FunctionName": {
+                "Fn::GetAtt": [
+                  "CartPurchasesDeleteLambdaFunction",
+                  "Arn"
+                ]
+              },
+              "Action": "lambda:InvokeFunction",
+              "Principal": "apigateway.amazonaws.com",
+              "SourceArn": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":execute-api:",
+                    {
+                      "Ref": "AWS::Region"
+                    },
+                    ":",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":",
+                    {
+                      "Ref": "ApiGatewayRestApi"
+                    },
+                    "/*/*"
+                  ]
+                ]
+              }
+            }
+          },
           "GatewayResponseDefault4XX": {
             "Type": "AWS::ApiGateway::GatewayResponse",
             "Properties": {
@@ -1593,19 +2357,19 @@
           "CreateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateLambdaVersionPmIsIZl5T8chYhY6gE3UEZIdrs6hAxvJOHHKe7o"
+              "Ref": "CreateLambdaVersiontUHZsjYM1oljndepgBLKufTUh0MydMtYK97IU5qg"
             }
           },
           "GetLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GetLambdaVersioneHSYejjejvu1sfWxzqHMxF06J893xd9xKJCQvMBKs"
+              "Ref": "GetLambdaVersionKdqolQ086LvBsm79eWGX2OclWwqgeLxCANrqwLeQb9k"
             }
           },
           "ListLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListLambdaVersioncvsONkfzWCfGYFJbnrpAMSbh9WFpI0wStxaNPJZbTU"
+              "Ref": "ListLambdaVersionpS7hjn0fOHYH3BwLWWjfU6GxGTaXcNVCZkApHeCwk"
             }
           },
           "ListReservedLambdaFunctionQualifiedArn": {
@@ -1617,25 +2381,55 @@
           "UpdateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateLambdaVersionwfAmQ8CvBvp56B0ODXCMBSL7nCHI93oOImrOmHglvQ"
+              "Ref": "UpdateLambdaVersion9WPZGtkC1rDGzrCr6hqmrb7s8A8AFqVB5y14SDJAyw"
             }
           },
           "ReserveLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ReserveLambdaVersioncyFWYf0Hc4hQwgxdDFagaGgHrUpEL05gml4OeoXdo"
+              "Ref": "ReserveLambdaVersionm9cdSv0qwBx4GC6PlZYMUFldIbNKBlCzf9WxLoDGf2I"
             }
           },
           "DeleteLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "DeleteLambdaVersionMUtCNfa7HzVs00Q5XdDhYbthdWMaOijhIpV7jcjuwNE"
+              "Ref": "DeleteLambdaVersiond0Dg9eoGVFhaSJemz526cnvxHxEXeGsT08NEA8"
             }
           },
           "BillingLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
               "Ref": "BillingLambdaVersionNFyRYakIMISWGT1KYsqrW36jGQrmqHluOfZMyBZYI"
+            }
+          },
+          "CartPurchasesCreateLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "CartPurchasesCreateLambdaVersionIS55GLQccG9w015X7f3VndYUvIWFrNFItZeUReVwWE"
+            }
+          },
+          "CartPurchasesGetLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "CartPurchasesGetLambdaVersionWrJjVDSUS53PL28pJEK9fAes26cf5bZ0G4XDqoFk"
+            }
+          },
+          "CartPurchasesListLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "CartPurchasesListLambdaVersion3X3oAWUZRjVSsAeulDPQy03XHD1dLKm0cBW5TpXto"
+            }
+          },
+          "CartPurchasesUpdateLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "CartPurchasesUpdateLambdaVersionP2OnXUqMcbgIFlQcQZycksd0j5g9i3xQZoSb7TV2ls"
+            }
+          },
+          "CartPurchasesDeleteLambdaFunctionQualifiedArn": {
+            "Description": "Current Lambda function version",
+            "Value": {
+              "Ref": "CartPurchasesDeleteLambdaVersionOs2oDfX22fp46rypvvqEpaqygcweBpoHCnjvhVnU"
             }
           },
           "ServiceEndpoint": {
@@ -1811,7 +2605,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "CreateLambdaVersionPmIsIZl5T8chYhY6gE3UEZIdrs6hAxvJOHHKe7o"
+        "versionLogicalId": "CreateLambdaVersiontUHZsjYM1oljndepgBLKufTUh0MydMtYK97IU5qg"
       },
       "get": {
         "handler": "get.main",
@@ -1856,7 +2650,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "GetLambdaVersioneHSYejjejvu1sfWxzqHMxF06J893xd9xKJCQvMBKs"
+        "versionLogicalId": "GetLambdaVersionKdqolQ086LvBsm79eWGX2OclWwqgeLxCANrqwLeQb9k"
       },
       "list": {
         "handler": "list.main",
@@ -1896,7 +2690,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ListLambdaVersioncvsONkfzWCfGYFJbnrpAMSbh9WFpI0wStxaNPJZbTU"
+        "versionLogicalId": "ListLambdaVersionpS7hjn0fOHYH3BwLWWjfU6GxGTaXcNVCZkApHeCwk"
       },
       "listReserved": {
         "handler": "listReserved.main",
@@ -1986,7 +2780,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "UpdateLambdaVersionwfAmQ8CvBvp56B0ODXCMBSL7nCHI93oOImrOmHglvQ"
+        "versionLogicalId": "UpdateLambdaVersion9WPZGtkC1rDGzrCr6hqmrb7s8A8AFqVB5y14SDJAyw"
       },
       "reserve": {
         "handler": "reserve.main",
@@ -2031,7 +2825,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ReserveLambdaVersioncyFWYf0Hc4hQwgxdDFagaGgHrUpEL05gml4OeoXdo"
+        "versionLogicalId": "ReserveLambdaVersionm9cdSv0qwBx4GC6PlZYMUFldIbNKBlCzf9WxLoDGf2I"
       },
       "delete": {
         "handler": "delete.main",
@@ -2076,7 +2870,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "DeleteLambdaVersionMUtCNfa7HzVs00Q5XdDhYbthdWMaOijhIpV7jcjuwNE"
+        "versionLogicalId": "DeleteLambdaVersiond0Dg9eoGVFhaSJemz526cnvxHxEXeGsT08NEA8"
       },
       "billing": {
         "handler": "billing.main",
@@ -2122,6 +2916,231 @@
         "runtime": "nodejs12.x",
         "vpc": {},
         "versionLogicalId": "BillingLambdaVersionNFyRYakIMISWGT1KYsqrW36jGQrmqHluOfZMyBZYI"
+      },
+      "cartPurchasesCreate": {
+        "handler": "cartPurchasesCreate.main",
+        "events": [
+          {
+            "http": {
+              "path": "cart-purchases",
+              "method": "post",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "POST"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "managedExternally": false,
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "minions-market-prod-cartPurchasesCreate",
+        "package": {
+          "artifact": ".serverless\\cartPurchasesCreate.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs12.x",
+        "vpc": {},
+        "versionLogicalId": "CartPurchasesCreateLambdaVersionIS55GLQccG9w015X7f3VndYUvIWFrNFItZeUReVwWE"
+      },
+      "cartPurchasesGet": {
+        "handler": "cartPurchasesGet.main",
+        "events": [
+          {
+            "http": {
+              "path": "cart-purchases/{id}",
+              "method": "get",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "GET"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "managedExternally": false,
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "minions-market-prod-cartPurchasesGet",
+        "package": {
+          "artifact": ".serverless\\cartPurchasesGet.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs12.x",
+        "vpc": {},
+        "versionLogicalId": "CartPurchasesGetLambdaVersionWrJjVDSUS53PL28pJEK9fAes26cf5bZ0G4XDqoFk"
+      },
+      "cartPurchasesList": {
+        "handler": "cartPurchasesList.main",
+        "events": [
+          {
+            "http": {
+              "path": "cart-purchases",
+              "method": "get",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "GET"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "managedExternally": false,
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "minions-market-prod-cartPurchasesList",
+        "package": {
+          "artifact": ".serverless\\cartPurchasesList.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs12.x",
+        "vpc": {},
+        "versionLogicalId": "CartPurchasesListLambdaVersion3X3oAWUZRjVSsAeulDPQy03XHD1dLKm0cBW5TpXto"
+      },
+      "cartPurchasesUpdate": {
+        "handler": "cartPurchasesUpdate.main",
+        "events": [
+          {
+            "http": {
+              "path": "cart-purchases/{id}",
+              "method": "put",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "PUT"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "managedExternally": false,
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "minions-market-prod-cartPurchasesUpdate",
+        "package": {
+          "artifact": ".serverless\\cartPurchasesUpdate.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs12.x",
+        "vpc": {},
+        "versionLogicalId": "CartPurchasesUpdateLambdaVersionP2OnXUqMcbgIFlQcQZycksd0j5g9i3xQZoSb7TV2ls"
+      },
+      "cartPurchasesDelete": {
+        "handler": "cartPurchasesDelete.main",
+        "events": [
+          {
+            "http": {
+              "path": "cart-purchases/{id}",
+              "method": "delete",
+              "cors": {
+                "origins": [
+                  "*"
+                ],
+                "origin": "*",
+                "methods": [
+                  "OPTIONS",
+                  "DELETE"
+                ],
+                "headers": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent"
+                ],
+                "allowCredentials": false
+              },
+              "authorizer": {
+                "type": "AWS_IAM",
+                "managedExternally": false,
+                "identitySource": "method.request.header.Authorization"
+              },
+              "integration": "AWS_PROXY"
+            }
+          }
+        ],
+        "name": "minions-market-prod-cartPurchasesDelete",
+        "package": {
+          "artifact": ".serverless\\cartPurchasesDelete.zip"
+        },
+        "memory": 1024,
+        "timeout": 6,
+        "runtime": "nodejs12.x",
+        "vpc": {},
+        "versionLogicalId": "CartPurchasesDeleteLambdaVersionOs2oDfX22fp46rypvvqEpaqygcweBpoHCnjvhVnU"
       }
     },
     "resources": {
@@ -2164,7 +3183,7 @@
       },
       "package": {
         "individually": true,
-        "artifactDirectoryName": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z"
+        "artifactDirectoryName": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z"
       },
       "plugins": {
         "$ref": "$[\"service\"][\"plugins\"]"
@@ -2183,7 +3202,7 @@
   },
   "package": {
     "individually": true,
-    "artifactDirectoryName": "serverless/minions-market/prod/1610472279174-2021-01-12T17:24:39.174Z",
+    "artifactDirectoryName": "serverless/minions-market/prod/1610654548645-2021-01-14T20:02:28.645Z",
     "artifact": ""
   }
 }

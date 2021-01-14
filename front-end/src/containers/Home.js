@@ -12,7 +12,6 @@ export default function Home() {
 
   useEffect(() => {
     async function onLoad() {
-
       try {
         const minions = await loadMinions();
         setMinions(minions);
@@ -24,23 +23,17 @@ export default function Home() {
     }
   
     onLoad();
-  }, [isAuthenticated]);
+  }, []);
   
   function loadMinions() {
     return API.get("minions-market", "/minions");
-  }
-
-  function renderLander() {
-    return (
-      <div class="login-msg"> Faça login para exibir os produtos disponíveis.</div>
-    );
   }
 
   function renderProducts() {
     return (
       <div id="products">
               
-      {minions.map(({ minionId, productName, unitPrice, photos, reserved}) => (
+      {minions.map(({ productId, productName, unitPrice, photos, reserved}) => (
         <div class="card">
           <img class="product_img" src={photos} alt={photos}/>
           <div class="card-container">
@@ -51,7 +44,7 @@ export default function Home() {
               (
                   <button type="button" name="reserve" className = "btn-reserve reserved"><p>Reservado</p></button>
               ):(
-                <LinkContainer key={minionId} to={`/minions/${minionId}`}>
+                <LinkContainer key={productId} to={`/minions/${productId}`}>
                 <button type="button" name="reserve" className = "btn-reserve"><p>Reservar</p></button>
                 </LinkContainer> 
               )
