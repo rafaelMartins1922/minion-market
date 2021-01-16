@@ -76,6 +76,7 @@
     flex-direction: column;
     justify-content: space-evenly; 
     align-items: center; 
+    margin-bottom: 2vh; 
   }
   
   form {
@@ -119,4 +120,17 @@
 
 .product-description p {
     margin:0;
+}
+
+.details-page-buttons {
+  display:flex;
+  flex-direction:row;
+  width: 50%;
+  justify-content: space-evenly;
+  margin: 0vh auto 3vh;
+}
+
+.details-page-buttons button {
+  font-size: 0.9vw;
+  width: 10vw;
 }

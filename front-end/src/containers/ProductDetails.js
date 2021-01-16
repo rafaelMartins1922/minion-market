@@ -18,12 +18,12 @@ export default function ProductDetails() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [fields, handleFieldChange] = useFormFields({
     email:"",
-    amount:0,
     cardholder:"",
     cardNumber: "",
-    reserved: 1,
-    productName: null
+    address:""
   });
+  const [showForm,setShowForm] = useState(false);
+  const formButtons = React.createRef(); 
   
   useEffect(() => {
     function loadProduct() {
@@ -35,7 +35,6 @@ export default function ProductDetails() {
         const user = await Auth.currentAuthenticatedUser();
         const product = await loadProduct();
         setProduct(product);
-        fields.productName = product.productName;
         fields.email = user.attributes.email;
       } catch (e) {
         onError(e);
@@ -45,10 +44,90 @@ export default function ProductDetails() {
     onLoad();
   }, [id]);
 
-  function updateProduct() {
-    return API.put("minions-market", `/minions/reserve/${id}`,{
-      body: fields
-    });
+  async function addToCart(){
+    try{
+      setIsLoading(true);
+      const isAlreadyAdded = (await API.get("minions-market",`/cart-purchases/${product.productId}`))? true:false;
+      if(isAlreadyAdded){
+        alert('Esse produto já está no carrinho.');
+        setIsLoading(false);
+        return;
+      }
+      const productAddedToCart = await API.post('minions-market','/cart-purchases', {
+        body: product
+      });
+      console.log(productAddedToCart);
+    }catch(e){
+      onError(e);
+    }
+    alert('Produto adicionado ao carrinho.');
+    setIsLoading(false);
+  }
+
+  async function buyProduct() {
+    const prod = await API.get("minions-market",`/cart-purchases/${id}`);
+    if(prod){
+      await API.put("minions-market",`/cart-purchases/${id}`,{
+        body: {
+          ...fields,
+          productStatus: "bought"
+        }
+      });
+    }else{
+      console.log(fields);
+      const log = await API.post("minions-market","/cart-purchases",{
+        body:{
+          ...product,
+          ...fields,
+          productStatus: "bought"
+        }
+      });
+      console.log(log);
+    }
+    
+    return API.del("minions-market", `/minions/${id}`);
+  }
+
+  function renderForm(){
+    
+    if(showForm) {
+      return (
+        <>  
+            <p>Para finalizar sua compra, preencha os dados de pagamento abaixo. Você precisará de um cartão de crédito ou débito</p>
+            <div class = "div-form">
+            <Form onSubmit={handleSubmit}>
+              <Form.Group size="lg" controlId="address">
+                <Form.Control
+                  type="text"
+                  value={fields.address}
+                  onChange={handleFieldChange}
+                  placeholder="Endereço para entrega."
+                />
+              </Form.Group>
+              <Form.Group size="lg" controlId="cardholder">
+                <Form.Control
+                  type="text"
+                  value={fields.cardholder}
+                  onChange={handleFieldChange}
+                  placeholder="Nome no Cartão"
+                />
+              </Form.Group>
+              <Form.Group size="lg" controlId="cardNumber">
+                <Form.Control
+                  type="text"
+                  value={fields.cardnumber}
+                  onChange={handleFieldChange}
+                  placeholder="Número no Cartão"
+                />
+              </Form.Group>
+              <LoaderButton type="submit" size="lg" disabled = {isLoading} isLoading={isLoading}>
+                Confirmar
+              </LoaderButton>
+            </Form>
+            </div>
+        </>
+      );
+    }
   }
 
   async function handleSubmit(event) {
@@ -62,16 +141,15 @@ export default function ProductDetails() {
       return;
     }
   
-    setIsDeleting(true);
+    setIsLoading(true);
 
     try{
-      const executed = await updateProduct();
-      console.log(executed);
+      const executed = await buyProduct();
       alert("Produto reservado!");
       history.push("/");
     }catch(e){
       onError(e);
-      setIsDeleting(false);
+      setIsLoading(false);
     }
   }
 
@@ -97,50 +175,29 @@ export default function ProductDetails() {
             />
           </Form.Group>
           </div>  
-          <div class = "div-form">
-            <Form onSubmit={handleSubmit}>
-              {/* <Form.Group size="lg" controlId="email">
-                <Form.Control
-                  autoFocus
-                  type="email"
-                  value={fields.email}
-                  onChange={handleFieldChange}
-                  placeholder = "e-mail"
-                />
-              </Form.Group> */}
-              {/* <Form.Group size="lg" controlId="amount">
-                <Form.Control
-                  type="email"
-                  value={fields.email}
-                  onChange={handleFieldChange}
-                  placeholder="Quantidade desejada"
-                />
-              </Form.Group> */}
-              <Form.Group size="lg" controlId="cardholder">
-                <Form.Control
-                  type="text"
-                  value={fields.cardholder}
-                  onChange={handleFieldChange}
-                  placeholder="Nome no Cartão"
-                />
-              </Form.Group>
-              <Form.Group size="lg" controlId="cardNumber">
-                <Form.Control
-                  type="text"
-                  value={fields.cardnumber}
-                  onChange={handleFieldChange}
-                  placeholder="Número no Cartão"
-                />
-              </Form.Group>
-              <LoaderButton
+          {renderForm()}
+          <div class="details-page-buttons">
+            <LoaderButton
               block
               size="lg"
               type="submit"
+              disabled = {isLoading}
               isLoading={isLoading}
-              >
-                  Confirmar
+              onClick={addToCart}
+              className="button-add-to-cart"
+            >Adicionar ao carrinho</LoaderButton>
+            {
+              showForm?
+              <LoaderButton size="lg" type="submit" disabled = {isLoading} isLoading={isLoading} onClick={() => setShowForm(false)}>
+                Cancelar
               </LoaderButton>
-            </Form>
+              :
+              <LoaderButton size="lg" type="submit" disabled = {isLoading} isLoading={isLoading} onClick={() => {
+                setShowForm(true);
+              }}
+              >Finalizar compra</LoaderButton>
+            }
+            
           </div>
         </section>
       )}

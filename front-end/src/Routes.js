@@ -8,6 +8,7 @@ import ProductDetails from "./containers/ProductDetails";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 import Cart from './containers/Cart';
+import Purchases from './containers/Purchases';
 
 export default function Routes() {
   return (
@@ -26,6 +27,9 @@ export default function Routes() {
         </UnauthenticatedRoute>
         <AuthenticatedRoute exact path="/cart">
           <Cart/>
+        </AuthenticatedRoute>
+        <AuthenticatedRoute exact path="/purchases">
+          <Purchases/>
         </AuthenticatedRoute>
         <Route>
             <NotFound />

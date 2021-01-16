@@ -1,0 +1,15 @@
+{
+    "body": "[{\"producId\":\"a072c750-577c-11eb-9aa9-d38463a75bd8\",\"productStatus\":\"bought\"},{\"producId\":\"a0731570-577c-11eb-9aa9-d38463a75bd8\",\"productStatus\":\"bought\"}]",
+    "email": "rlm87978@gmail.com",
+    "cardNumber": "8984234",
+    "cardholder": "me",
+    "address": "rua das conchas",
+    "pathParameters": {
+      "id": "23b27440-568c-11eb-90e3-d3c2c2aa4cea"
+    },
+    "requestContext": {
+      "identity": {
+        "cognitoIdentityId": "USER-SUB-1234"
+      }
+    }
+  }

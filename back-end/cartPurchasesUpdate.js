@@ -1,9 +1,13 @@
 import handler from "./libs/handler-lib";
 import dynamoDb from "./libs/dynamodb-lib";
+import mailer from './mailer';
 
 export const main = handler(async (event, context) => {
   console.log('UDPATEANDO');
   const data = JSON.parse(event.body);
+  if(data.productStatus == "bought"){
+    await mailer.sendMail('rafael.martins@poli.ufrj.br',[data.email],data);
+  }
   const params = {
     TableName: 'cart-and-purchases',
     // 'Key' defines the partition key and sort key of the item to be updated

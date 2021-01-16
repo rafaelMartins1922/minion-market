@@ -51,6 +51,15 @@ functions:
           cors: true
           authorizer: aws_iam
   
+  createMany:
+    handler: createMany.main
+    events:
+      - http:
+          path: minions/createMany
+          method: post
+          cors: true
+          authorizer: aws_iam
+  
   get:
     # Defines an HTTP API endpoint that calls the main function in get.js
     # - path: url path is /notes/{id}
@@ -160,6 +169,15 @@ functions:
     events:
       - http:
           path: cart-purchases/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
+
+  cartPurchasesUpdateMany:
+    handler: cartPurchasesUpdateMany.main
+    events:
+      - http:
+          path: cart-purchases/many
           method: put
           cors: true
           authorizer: aws_iam

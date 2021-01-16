@@ -61,6 +61,9 @@ function App() {
                       <LinkContainer to = "/cart">
                         <Nav.Link href="/cart" >Carrinho</Nav.Link>
                       </LinkContainer>
+                      <LinkContainer to = "/purchases">
+                        <Nav.Link href="/purchases" >Histórico de Compras</Nav.Link>
+                      </LinkContainer>
                     </>
                   ): (
                     <>

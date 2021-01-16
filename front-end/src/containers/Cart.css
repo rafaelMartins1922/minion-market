@@ -1,5 +1,5 @@
 
-.content {
+.cart-content {
     all:unset;
     font-size: 1.3vw;
 }
@@ -31,8 +31,13 @@
     color: gray;
 }
 
-.cart-button {
+.remove-from-cart {
     all:unset;
+    background: rgba(138, 206, 207, 0.36);
+    height:fit-content;
+    width:10vw;
+    border-radius: 15px;
+    transition:0.3s;
 }
 
 .cart-image {

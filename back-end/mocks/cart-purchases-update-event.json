@@ -1,7 +1,7 @@
 {
-    "body": "{\"productStatus\":\"purchased\"}",
+    "body": "{\"productStatus\":\"bought\", \"email\":\"rlm87978@gmail.com\"}",
     "pathParameters": {
-      "id": "c8abdde0-5693-11eb-a11e-67a343f301c9"
+      "id": "23b27440-568c-11eb-90e3-d3c2c2aa4cea"
     },
     "requestContext": {
       "identity": {

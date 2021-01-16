@@ -1,0 +1,48 @@
+
+.cart-content {
+    all:unset;
+    font-size: 1.3vw;
+}
+
+.cart-element {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background:white;
+    height: 20vh;
+    width: 80vw;
+    margin:1vh auto;
+    border-radius:20px;
+    text-justify: distribute;
+}
+
+.cart-element div {
+
+    width:25%;
+    margin:auto;
+}
+
+.title-description p{
+    text-align: justify;
+    text-justify: distribute-all-lines;
+}
+
+.description {
+    color: gray;
+}
+
+.cart-button {
+    all:unset;
+}
+
+.cart-image {
+    height:100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.cart-image img{
+    width: 70%;
+    height:80%;
+    margin: auto;
+}

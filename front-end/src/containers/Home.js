@@ -14,6 +14,7 @@ export default function Home() {
     async function onLoad() {
       try {
         const minions = await loadMinions();
+        console.log(minions);
         setMinions(minions);
       } catch (e) {
         onError(e);
@@ -33,27 +34,30 @@ export default function Home() {
     return (
       <div id="products">
               
-      {minions.map(({ productId, productName, unitPrice, photos, reserved}) => (
+      {minions.map(({productId, productName,unitPrice, photos}) => (
         <div class="card">
           <img class="product_img" src={photos} alt={photos}/>
           <div class="card-container">
             <h4><b>{productName}</b></h4>
             <p>R$ {unitPrice}</p>
-            {
-              reserved?
-              (
-                  <button type="button" name="reserve" className = "btn-reserve reserved"><p>Reservado</p></button>
-              ):(
-                <LinkContainer key={productId} to={`/minions/${productId}`}>
-                <button type="button" name="reserve" className = "btn-reserve"><p>Reservar</p></button>
-                </LinkContainer> 
-              )
-            }
-            
+              <LinkContainer to={`/minions/${productId}`}>
+                <button
+                  className = "button-details">
+                    <p>Ver detalhes</p>
+                </button>
+              </LinkContainer> 
           </div>
         </div>
       ))}
         </div>
+    );
+  }
+
+  function renderNoProductsAvailableWarning() {
+    return (
+      <div id="products">
+        <p>Nenhum produto disponível</p>
+      </div>
     );
   }
 
@@ -79,11 +83,11 @@ export default function Home() {
             <div id="intro">
               <div id="intro-text">
                 <p>O Minions’ Market busca oferecer as melhores miniaturas de minions por preços justos.</p>
-                <p>Reserve a sua! É só clicar em "reservar", preencher o formulário com suas informações e confirmar</p>
+                <p>Reserve a sua! Veja os detalhes de cada produto e confirme sua compra, ou adicione-os ao seu carrinho</p>
               </div>
               <img src="three_minions_looking_up.png" alt="minions looking up"/>
             </div>
-            {renderProducts()}
+            {minions.length > 0? renderProducts(): renderNoProductsAvailableWarning()}
           </section>
     </div>
   );

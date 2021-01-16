@@ -12,13 +12,12 @@ export const main = handler(async (event, context) => {
     },
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression
-    UpdateExpression: "SET productName = :productName, amount = :amount, unitPrice = :unitPrice, photos = :photos, reserved = :reserved",
+    UpdateExpression: "SET productName = :productName, amount = :amount, unitPrice = :unitPrice, photos = :photos",
     ExpressionAttributeValues: {
       ":productName": data.productName || null,
       ":amount": data.amount || null,
       ":unitPrice": data.unitPrice || null,
       ":photos": data.photos || null,
-      ":reserved":parseInt(data.reserved) || 0
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you

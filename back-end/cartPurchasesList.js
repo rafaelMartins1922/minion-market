@@ -3,7 +3,10 @@ import dynamoDb from "./libs/dynamodb-lib";
 
 export const main = handler(async (event, context) => {
   const params = {
-    TableName: 'cart-and-purchases'
+    TableName: 'cart-and-purchases',
+    Key: {
+      userId:event.requestContext.identity.cognitoIdentityId,
+    }
   };
 
   const result = await dynamoDb.scan(params);

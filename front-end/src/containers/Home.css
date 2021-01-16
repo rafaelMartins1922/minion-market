@@ -119,7 +119,7 @@
   width:100%;
 }
 
-.btn-reserve {
+.button-details {
   height: 5vh;
   width: 8vw;
   background: rgba(237, 222, 15, 0.73);
@@ -130,17 +130,17 @@
   margin:auto;
 }
 
-.btn-reserve:hover {
+.button-details:hover {
   color: rgba(237, 222, 15, 0.73);
   background: #5A5A5A;
 }
 
-.btn-reserve p{
+.button-details p{
   display:block;
   margin:auto;
   width: 90%;
   text-justify: auto;
-  font-size: 1.1vw;
+  font-size: 0.9vw;
 }
 
 .login-msg {

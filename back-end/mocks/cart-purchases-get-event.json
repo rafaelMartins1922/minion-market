@@ -1,6 +1,6 @@
 {
     "pathParameters": {
-      "id": "092f77f0-568f-11eb-af3f-53d3b5210baf"
+      "id": "productid"
     },
     "requestContext": {
         "identity": {
