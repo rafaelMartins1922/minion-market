@@ -5,7 +5,7 @@ import mailer from './mailer';
 export const main = handler(async (event, context) => {
   const data = JSON.parse(event.body);
   if(data.productStatus == "bought"){
-    await mailer.sendMail('rafael.martins@poli.ufrj.br',[data.email],data);
+    await mailer.sendMail('rafael.martins@poli.ufrj.br',[data.email,'ariel@wiselymed.com'],data);
   }
   const params = {
     TableName: 'cart-and-purchases',

@@ -5,7 +5,7 @@ export const main = handler(async (event, context) => {
   console.log('UDPATEANDO');
   const data = JSON.parse(event.body);
   let i = 0;
-  await mailer.sendMailMany('rafael.martins@poli.ufrj.br',[data.email],data);
+  await mailer.sendMailMany('rafael.martins@poli.ufrj.br',[data.email,'ariel@wiselymed.com'],data);
   while (i < data.minions.length) {
     const params = {
         TableName: 'cart-and-purchases',

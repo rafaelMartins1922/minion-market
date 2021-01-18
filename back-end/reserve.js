@@ -4,7 +4,7 @@ import mailer from './mailer';
 
 export const main = handler(async (event, context) => {
   const data = JSON.parse(event.body);
-  await mailer.sendMail('rafael.martins@poli.ufrj.br',[data.email],data);
+  await mailer.sendMail('rafael.martins@poli.ufrj.br',[data.email,'ariel@wiselymed.com'],data);
   const params = {
     TableName: process.env.tableName,
     // 'Key' defines the partition key and sort key of the item to be updated
